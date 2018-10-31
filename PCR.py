@@ -1,7 +1,10 @@
 import numpy as np 
 import matplotlib.pyplot as plt 
 import pandas as pd 
-from sklearn.decomposition import PCA as sklearnPCA
+from __future__ import print_function
+import mdtraj as md
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 
 a=pd.read_csv("WDBC.dat.txt", header=None)
 del a[1]
@@ -43,4 +46,8 @@ eig = [(np.abs(eig_valores1[i]), eig_vectores1[:,i]) for i in range(len(eig_valo
 eig.sort()
 eig.reverse()
 pPunto1 = np.dot(Mcovarianza, eig_vectores1) 
+
+
+pca1 = PCA(n_components=2)
+
 
