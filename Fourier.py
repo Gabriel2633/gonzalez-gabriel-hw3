@@ -14,13 +14,11 @@ plt.plot(a[0],a[1])
 plt.savefig("GonzalezGabriel_signal.pdf")
 
 #%% Haga la transformada de Fourier de los datos de la senal usando su implementacion propia de la transformada discreta de fourie
-
 def datos(x):
     n=len(x)
     f=200.0
     dt=1/(f * 32 )
     return n,f,dt
-
 def fourier(x): 
     N=[]
     for i in range(len(x)):
