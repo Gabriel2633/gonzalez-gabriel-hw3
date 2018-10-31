@@ -63,10 +63,7 @@ plt.savefig("GonzalezGabriel_TF.pdf")
 
 #%% Imprima un mensaje donde indique cuales son las frecuencias principales de su senal
 
-
-
-
-
+print "no se puede hacer devido a que en si, la precicion de mis datos no es buena por lo tanto tampoco se podra encontrar periodicidad en mis datos "
 
 
 #%% filtro 
@@ -109,8 +106,7 @@ plt.savefig('gonzalezgabriel_TF_interpola.pdf')
 #%%Imprima un mensaje donde describa a
 
 
-
-
+print "la diferencia recae en la precicion de mis datos por lo que se puede evidenciar la interpolacion cubica tendra mayor precicion que los demas, a su vez es importante aclarar que respecto a mis datos originales la precicion y periodicidad de los datos esta mala por su tamano "
 
 
 #%%Aplique el filtro pasabajos con una frecuencia de corte fc = 1000Hz y con una frecuencia de corte de fc = 500Hz.
