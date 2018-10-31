@@ -41,10 +41,6 @@ fa=fft(a[1])
 fb=fft(b[1])
     
 #%% Haga una grafica de la transformada de Fourier y guarde dicha grafica sin mostrarla en ApellidoNombre_TF.pdf.
-
-
-
-
 melo=datos(a[1])
 freq = fftfreq(melo[0], melo[2])
 
@@ -59,55 +55,36 @@ plt.plot(freq2,fb)
 plt.show()
 plt.savefig("GonzalezGabriel_TF.pdf")
 
-
-
 #%% Imprima un mensaje donde indique cuales son las frecuencias principales de su senal
 
 print "no se puede hacer devido a que en si, la precicion de mis datos no es buena por lo tanto tampoco se podra encontrar periodicidad en mis datos "
-
-
 #%% filtro 
-
-corte=1000
-
 for i in range(len(freq)):
-    if(abs(freq[i])>corte):
+    if(abs(freq[i])>1000):
         freq[i]=0
-        
         
 plt.plot(freq,fa)
 plt.savefig('GonzalezGabriel_filtrada.pdf')
     
 #%% interpolacion cuadratica 
 from scipy.interpolate import interp1d
-
 x=np.linspace(min(b[0]),max(b[0]), num=512, endpoint=True)
-
 f = interp1d(b[0],b[1])
 f2 = interp1d(b[0],b[1], kind='cubic')
-
 serie1 = f(x)
 serie2 = f2(x)
-
 fserie1 = fft(serie1)
 fserie2 = fft(serie2)
-
 #%%HagaunagraficacontressubplotsdelastrestransformadadeFourier
-
-
 freqs1 = fftfreq(512, melo2[2])
 freqs2 = fftfreq(512, melo2[2])
-
 plt.plot(freq2,fb)
 plt.plot(freqs1,serie1)
 plt.plot(freqs2,serie2)
 plt.savefig('gonzalezgabriel_TF_interpola.pdf')
 
 #%%Imprima un mensaje donde describa a
-
-
 print "la diferencia recae en la precicion de mis datos por lo que se puede evidenciar la interpolacion cubica tendra mayor precicion que los demas, a su vez es importante aclarar que respecto a mis datos originales la precicion y periodicidad de los datos esta mala por su tamano "
-
 
 #%%Aplique el filtro pasabajos con una frecuencia de corte fc = 1000Hz y con una frecuencia de corte de fc = 500Hz.
 
