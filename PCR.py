@@ -24,11 +24,9 @@ for fila in range (2,a.shape[1]):
         if(col!=1):
             Mcov1[fila-1, col-1] = covarianza(a[fila],a[col]) 
 eig_valores1,eig_vectores1= np.linalg.eig(Mcov1)
-
-
 Mcovarianza=np.cov(a)
 eig_valores,eig_vectores= np.linalg.eig(Mcovarianza)
-pPunto = np.dot(Mcovarianza, eig_vectores)
+pPunto = np.dot(Mcovarianza[0], eig_vectores)
 
 print "la matriz de covarianza es ", Mcovarianza
 
